@@ -1,0 +1,10 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-dotenv>=1.0
+pydantic>=2.8
+aiosqlite>=0.20
+google-adk>=2.2
+databricks-sql-connector>=4.0
+pandas>=2.2
+matplotlib>=3.9
+
