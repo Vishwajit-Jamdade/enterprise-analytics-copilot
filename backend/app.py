@@ -82,39 +82,6 @@ async def root() -> dict[str, str]:
         "charts": "/charts",
     }
 
-# @app.post("/api/chat/stream")
-# async def chat_stream(payload: ChatRequest):
-
-#     session_id = payload.session_id or uuid4().hex
-#     user_id = payload.user_id or DEFAULT_USER_ID
-
-#     async def generate():
-
-#         async for event in runner.run_async(
-#             user_id=user_id,
-#             session_id=session_id,
-#             new_message=_content_from_message(payload.message),
-#         ):
-
-#             text = _extract_text(event)
-
-#             if text:
-
-#                 yield (
-#                     json.dumps(
-#                         {
-#                             "type": "message",
-#                             "content": text
-#                         }
-#                     )
-#                     + "\n"
-#                 )
-
-#     return StreamingResponse(
-#         generate(),
-#         media_type="text/event-stream"
-#     )
-
 
 class ChatRequest(BaseModel):
     message: str = Field(min_length=1)

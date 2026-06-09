@@ -331,7 +331,7 @@ export default function App() {
             <span />
           </div>
         ) : (
-          <div>{message.content}</div>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.content}</ReactMarkdown>
         )}
 
         {artifactUrl &&
